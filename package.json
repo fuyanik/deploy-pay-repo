@@ -11,11 +11,10 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "^3.4.0",
-    "stripe": "^8.202.0"
-  },
-  "devDependencies": {
+    "stripe": "^8.202.0",
     "concurrently": "^4.1.2"
   },
+
   "homepage": "http://localhost:3000/checkout",
   "proxy": "http://localhost:4242",
   "scripts": {

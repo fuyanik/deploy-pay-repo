@@ -15,7 +15,7 @@
     "react-scripts": "^3.4.0",
     "stripe": "^8.202.0"
   },
-  "homepage": "http://localhost:3000/checkout",
+ 
   "proxy": "http://localhost:4242",
   "scripts": {
     "start-client": "react-scripts start",

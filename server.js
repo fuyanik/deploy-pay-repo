@@ -33,16 +33,6 @@ app.post("/create-payment-intent", async (req, res) => {
   });
 });
 
-const { createProxyMiddleware } = require('http-proxy-middleware');
 
-module.exports = function(app) {
-  app.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'http://localhost:4242',
-      changeOrigin: true,
-    })
-  );
-};
 console.log("asd")
 app.listen(4242, () => console.log("Node server listening on port 4242!"));

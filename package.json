@@ -1,6 +1,7 @@
 {
   "name": "stripe-sample",
   "version": "0.1.0",
+  "proxy": "http://localhost:4242",
   "dependencies": {
     "-": "^0.0.1",
     "@stripe/react-stripe-js": "^1.0.0",

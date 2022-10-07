@@ -27,6 +27,18 @@ const calculateOrderAmount = (items) => {
   return 1400;
 };
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+module.exports = function(app) {
+  app.use(
+    '/api',
+    createProxyMiddleware({
+      target: 'http://localhost:4242',
+      changeOrigin: true,
+    })
+  );
+};
+
 console.log("asd")
 
 app.post("/create-payment-intent", async (req, res) => {

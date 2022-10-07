@@ -1,15 +1,3 @@
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
-module.exports = function(app) {
-  app.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'https://deploy-vitamu.herokuapp.com',
-      changeOrigin: true,
-    })
-  );
-};
-
 
 
 const express = require("express");
@@ -26,19 +14,6 @@ const calculateOrderAmount = (items) => {
   // people from directly manipulating the amount on the client
   return 1400;
 };
-
-const { createProxyMiddleware } = require('http-proxy-middleware');
-
-module.exports = function(app) {
-  app.use(
-    '/api',
-    createProxyMiddleware({
-      target: 'http://localhost:4242',
-      changeOrigin: true,
-    })
-  );
-};
-
 console.log("asd")
 
 app.post("/create-payment-intent", async (req, res) => {
@@ -58,5 +33,16 @@ app.post("/create-payment-intent", async (req, res) => {
   });
 });
 
+const { createProxyMiddleware } = require('http-proxy-middleware');
+
+module.exports = function(app) {
+  app.use(
+    '/api',
+    createProxyMiddleware({
+      target: 'http://localhost:4242',
+      changeOrigin: true,
+    })
+  );
+};
 console.log("asd")
 app.listen(4242, () => console.log("Node server listening on port 4242!"));

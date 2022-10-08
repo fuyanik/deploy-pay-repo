@@ -1,7 +1,7 @@
 {
   "name": "stripe-sample",
   "version": "0.1.0",
-  "proxy": "http://localhost:4242",
+
    "homePage": "https://deploy-vitamu.herokuapp.com",
   "dependencies": {
     "-": "^0.0.1",

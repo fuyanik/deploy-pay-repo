@@ -1,5 +1,3 @@
-
-
 const express = require("express");
 const app = express();
 // This is your test secret API key.
@@ -14,7 +12,22 @@ const calculateOrderAmount = (items) => {
   // people from directly manipulating the amount on the client
   return 1400;
 };
-console.log("asd")
+
+
+if (process.env.NODE_ENV === "production") {
+  // Express will serve up production assets
+  app.use(express.static("build"));
+  app.get("*", (req, res) => res.sendFile(path.resolve("build", "index.html")));
+}
+
+if (process.env.NODE_ENV === "dev") {
+  // Express will serve up production assets
+  app.use(express.static("public"));
+  app.get("*", (req, res) =>
+    res.sendFile(path.resolve("public", "index.html"))
+  );
+}
+
 
 app.post("/create-payment-intent", async (req, res) => {
   const { items } = req.body;
@@ -33,6 +46,4 @@ app.post("/create-payment-intent", async (req, res) => {
   });
 });
 
-
-console.log("asd")
 app.listen(4242, () => console.log("Node server listening on port 4242!"));

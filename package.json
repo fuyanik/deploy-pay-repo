@@ -72,7 +72,7 @@
   "scripts": {
     "start-client": "node scripts/start.js",
     "start-server": "node server.js",
-    "build": "node scripts/build.js",
+    "build":  " set \"DANGEROUSLY_DISABLE_HOST_CHECK=true\" && node scripts/build.js",
     "test": "node scripts/test.js",
     "start": "concurrently \"npm run  start-client\" \"npm run start-server\"",
     "heroku-postbuild": "npm run build"
